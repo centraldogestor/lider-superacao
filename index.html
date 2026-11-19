@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projeto Superação | Claudio Schneider · Central do Gestor</title>
+<meta name="description" content="Projeto Superação: cursos de liderança de Claudio Schneider com valor reduzido e acesso vitalício. Líder Magnético, Liderança Consciente, cursos Express e formação em liderança. Leve para você e presenteie sua equipe.">
+<meta property="og:title" content="Projeto Superação | Claudio Schneider">
+<meta property="og:description" content="Assim você me ajuda. E eu te ajudo também. Cursos de liderança com acesso vitalício e inscrições para presentear.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://lider.centraldogestor.com.br/">
+<meta property="og:image" content="https://lider.centraldogestor.com.br/claudio.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#141C36; --navy-2:#1c2545;
+    --gold:#C5A059; --btn:#d4ac63; --btn-hover:#e9c76f; --gold-text:#c99a3f;
+    --bg:#fcf9f8; --card:#ffffff; --ink:#1c1b1b; --mist:#5a6360; --line:#e5e2e1;
+    --radius:16px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;font-size:17px;-webkit-font-smoothing:antialiased}
+  img{max-width:100%;display:block}
+  a{color:inherit}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 22px}
+  .narrow{max-width:720px;margin:0 auto;padding:0 22px}
+  section{padding:76px 0}
+  .overline{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-text);margin-bottom:14px}
+  h1,h2{font-family:Fraunces,Georgia,serif;font-weight:600;line-height:1.15;color:var(--navy)}
+  h1{font-size:clamp(38px,6vw,62px)}
+  h2{font-size:clamp(28px,4.2vw,40px);margin-bottom:18px}
+  h3{font-size:19px;font-weight:600;color:var(--navy);margin-bottom:6px}
+  p+p{margin-top:14px}
+  .muted{color:var(--mist)}
+
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--btn);color:var(--navy);font-weight:700;font-size:16px;padding:16px 30px;border-radius:999px;text-decoration:none;border:0;cursor:pointer;transition:background .2s,transform .2s,box-shadow .2s}
+  .btn:hover{background:var(--btn-hover);transform:translateY(-2px);box-shadow:0 12px 28px rgba(201,154,63,.35)}
+  .btn-ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.35)}
+  .btn-ghost:hover{background:rgba(255,255,255,.08);box-shadow:none}
+
+  /* topo */
+  .bar{background:var(--navy);color:rgba(255,255,255,.85);font-size:13px;text-align:center;padding:10px 16px;letter-spacing:.02em}
+  .bar strong{color:var(--btn-hover)}
+
+  /* hero */
+  .hero{background:var(--navy);color:#fff;padding:64px 0 84px;position:relative;overflow:hidden}
+  .hero::after{content:"";position:absolute;right:-180px;top:-180px;width:520px;height:520px;border-radius:50%;border:1px solid rgba(197,160,89,.25)}
+  .hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:48px;align-items:center;position:relative;z-index:1}
+  .hero h1{color:#fff}
+  .hero h1 em{font-style:normal;color:var(--btn-hover)}
+  .hero .lead{font-size:19px;color:rgba(255,255,255,.82);margin:22px 0 32px;max-width:540px}
+  .hero .actions{display:flex;gap:12px;flex-wrap:wrap}
+  .hero .brand{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:26px}
+  .photo{aspect-ratio:4/5;border-radius:var(--radius);background:var(--navy-2) center/cover no-repeat;border:1px solid rgba(197,160,89,.35);display:flex;align-items:flex-end;overflow:hidden}
+  .photo img{width:100%;height:100%;object-fit:cover}
+  .photo .ph{padding:22px;color:rgba(255,255,255,.5);font-size:14px}
+
+  /* carta */
+  .letter{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:44px 40px}
+  .letter p{font-size:18px}
+  .sign{margin-top:26px;font-family:Fraunces,Georgia,serif;font-size:22px;color:var(--navy)}
+  .sign small{display:block;font-family:Inter,sans-serif;font-size:13px;color:var(--mist);margin-top:2px}
+
+  /* o que recebe */
+  .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:34px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px;transition:border-color .2s,transform .2s,box-shadow .2s}
+  .card:hover{border-color:var(--gold);transform:translateY(-3px);box-shadow:0 16px 32px rgba(20,28,54,.08)}
+  .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gold-text);margin-bottom:10px}
+  .card ul{list-style:none;margin-top:10px}
+  .card li{padding-left:20px;position:relative;margin-top:6px;color:var(--mist);font-size:16px}
+  .card li::before{content:"";position:absolute;left:0;top:10px;width:8px;height:8px;border-radius:50%;background:var(--gold)}
+  .price-hero{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;margin-top:30px;padding:24px 28px;background:var(--navy);color:#fff;border-radius:var(--radius)}
+  .price-hero s{color:rgba(255,255,255,.5);font-size:20px}
+  .price-hero b{font-family:Fraunces,Georgia,serif;font-size:40px;color:var(--btn-hover);font-weight:600}
+  .price-hero span{color:rgba(255,255,255,.8);font-size:15px}
+
+  /* cotas */
+  .tiers-section{background:#f4f0ee}
+  .tiers{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:34px}
+  .tier{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px 18px;text-align:center;display:flex;flex-direction:column;position:relative;transition:border-color .2s,transform .2s,box-shadow .2s}
+  .tier:hover{border-color:var(--gold);transform:translateY(-3px);box-shadow:0 16px 32px rgba(20,28,54,.08)}
+  .tier.featured{border:2px solid var(--gold);box-shadow:0 16px 32px rgba(20,28,54,.10)}
+  .badge{position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:var(--navy);color:var(--btn-hover);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:5px 12px;border-radius:999px;white-space:nowrap}
+  .qty{font-family:Fraunces,Georgia,serif;font-size:44px;color:var(--navy);line-height:1}
+  .qty-label{font-size:13px;color:var(--mist);margin-bottom:16px}
+  .total{font-size:24px;font-weight:700;color:var(--navy)}
+  .unit{font-size:13px;color:var(--mist);margin:2px 0 4px}
+  .save{font-size:12px;font-weight:600;color:#0f8a63;margin-bottom:18px}
+  .tier .btn{padding:12px 14px;font-size:14px;margin-top:auto;width:100%}
+  .tier-desc{font-size:13px;color:var(--mist);margin-bottom:16px;min-height:38px}
+  .extra{margin-top:26px;text-align:center}
+  .extra summary{cursor:pointer;font-weight:600;color:var(--navy);list-style:none;display:inline-block;padding:10px 18px;border:1px solid var(--line);border-radius:999px;background:var(--card)}
+  .extra summary::-webkit-details-marker{display:none}
+  .extra-list{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:18px}
+  .extra-list a{display:block;text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 20px;min-width:180px;transition:border-color .2s}
+  .extra-list a:hover{border-color:var(--gold)}
+  .extra-list b{display:block;color:var(--navy)}
+  .extra-list span{font-size:13px;color:var(--mist)}
+  .note{text-align:center;font-size:14px;color:var(--mist);margin-top:22px}
+
+  .options{max-width:640px;margin:34px auto 0;background:var(--card);border:1px solid var(--line);border-radius:var(--radius);overflow:hidden}
+  .opt{display:grid;grid-template-columns:1fr 1fr auto;align-items:center;gap:12px;padding:18px 24px;text-decoration:none;border-bottom:1px solid var(--line);transition:background .2s}
+  .opt:last-child{border-bottom:0}
+  .opt:hover{background:#faf6ee}
+  .opt-val{font-size:20px;font-weight:700;color:var(--navy)}
+  .opt-qty{color:var(--mist);font-size:16px}
+  .opt-go{background:var(--btn);color:var(--navy);font-weight:700;font-size:14px;padding:10px 18px;border-radius:999px;transition:background .2s}
+  .opt:hover .opt-go{background:var(--btn-hover)}
+  @media (max-width:600px){.opt{padding:16px 18px}.opt-val{font-size:18px}.opt-go{padding:9px 14px}}
+
+  /* equipe */
+  .team{background:var(--navy);color:#fff}
+  .team h2{color:#fff}
+  .team-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+  .team p{color:rgba(255,255,255,.82)}
+  .team-box{border:1px solid rgba(197,160,89,.4);border-radius:var(--radius);padding:30px}
+  .team-row{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.1);font-size:16px}
+  .team-row:last-child{border-bottom:0}
+  .team-row b{color:var(--btn-hover)}
+
+  /* como funciona */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
+  .step{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px}
+  .step .n{width:38px;height:38px;border-radius:50%;background:var(--navy);color:var(--btn-hover);display:flex;align-items:center;justify-content:center;font-weight:700;margin-bottom:16px}
+  .step p{color:var(--mist);font-size:16px}
+
+  /* sobre */
+  .about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:48px;align-items:center}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px}
+  .stat{border:1px solid var(--line);border-radius:12px;padding:16px;background:var(--card)}
+  .stat b{display:block;font-size:26px;color:var(--navy)}
+  .stat span{font-size:13px;color:var(--mist)}
+
+  /* faq */
+  .faq details{background:var(--card);border:1px solid var(--line);border-radius:12px;margin-top:12px;padding:0 22px}
+  .faq summary{cursor:pointer;font-weight:600;color:var(--navy);padding:18px 0;list-style:none;display:flex;justify-content:space-between;gap:12px}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";color:var(--gold);font-size:22px;line-height:1}
+  .faq details[open] summary::after{content:"–"}
+  .faq details p{padding-bottom:18px;color:var(--mist);font-size:16px}
+
+  /* final */
+  .final{background:var(--navy);color:#fff;text-align:center}
+  .final h2{color:#fff}
+  .final p{color:rgba(255,255,255,.82);max-width:600px;margin:0 auto 30px}
+  .countdown{display:inline-flex;gap:10px;margin-bottom:30px}
+  .countdown div{border:1px solid rgba(197,160,89,.4);border-radius:12px;padding:12px 16px;min-width:74px}
+  .countdown b{display:block;font-size:26px;color:var(--btn-hover)}
+  .countdown span{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.6)}
+
+  footer{background:#0e1428;color:rgba(255,255,255,.55);font-size:13px;text-align:center;padding:30px 20px}
+  footer a{color:rgba(255,255,255,.75)}
+
+  /* botão fixo mobile */
+  .sticky{display:none}
+
+  @media (max-width:900px){
+    .hero-grid,.team-grid,.about-grid{grid-template-columns:1fr}
+    .photo{max-width:380px}
+    .tiers{grid-template-columns:repeat(2,1fr)}
+    .tier.featured{grid-column:span 2;order:-1}
+    .steps,.cards{grid-template-columns:1fr}
+  }
+  @media (max-width:600px){
+    body{font-size:16px}
+    section{padding:58px 0}
+    .letter{padding:30px 22px}
+    .tiers{grid-template-columns:1fr}
+    .tier.featured{grid-column:auto}
+    .stats{grid-template-columns:1fr 1fr 1fr}
+    .sticky{display:block;position:fixed;left:12px;right:12px;bottom:12px;z-index:50}
+    .sticky .btn{width:100%;box-shadow:0 10px 30px rgba(20,28,54,.35)}
+    footer{padding-bottom:96px}
+  }
+</style>
+</head>
+<body>
+
+<div class="bar">Projeto Superação · <strong>Primeira fase até 15 de dezembro</strong></div>
+
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="brand">Central do Gestor · Claudio Schneider</div>
+      <div class="overline">Projeto Superação</div>
+      <h1 id="headline">Se tá difícil pra mim e pra você, <em>por que a gente não se ajuda?</em></h1>
+      <p class="lead" id="lead">Baixei o valor do Líder Magnético de R$ 397 pra R$ 97 e juntei outros cursos de liderança no mesmo acesso. Assim você me ajuda. E eu te ajudo também.</p>
+      <div class="actions">
+        <a class="btn" href="#cotas">Quero participar</a>
+      </div>
+    </div>
+    <div class="photo">
+      <img src="claudio.jpg" alt="Claudio Schneider" onerror="this.remove()">
+      <div class="ph">Foto do Claudio (claudio.jpg)</div>
+    </div>
+  </div>
+</header>
+
+<section id="historia">
+  <div class="narrow">
+    <div class="overline">Por que esse projeto existe</div>
+    <h2>Vou ser direto com você</h2>
+    <div class="letter">
+      <p>Há poucas semanas eu passei por uma cirurgia no cérebro para retirar um abscesso. Graças a Deus, deu tudo certo e eu sigo me recuperando bem.</p>
+      <p>Pra me tratar, pausei minhas mentorias. Esse período teve muito custo e o faturamento caiu bastante.</p>
+      <p>Muita gente me escreveu perguntando como podia ajudar. Me sugeriram fazer uma vaquinha. Eu não me senti à vontade. Então resolvi fazer do jeito que eu sei: entregando conhecimento.</p>
+      <p>E olha, o momento tá desafiador pra todo mundo. Economia travada, dificuldade pra encontrar gente qualificada, empresas segurando as pontas. É nessa hora que formar bons líderes faz diferença.</p>
+      <p>Então funciona assim: você compra acesso aos meus cursos de liderança com um valor bem abaixo do normal. Esse valor me ajuda a atravessar esse período. E você leva ferramentas pra liderar melhor, pra você e pra quem você quiser presentear.</p>
+      <p>Eu tô me superando. Bora se superar junto?</p>
+      <div class="sign">Claudio Schneider<small>Fundador da Central do Gestor</small></div>
+    </div>
+  </div>
+</section>
+
+<section id="conteudo" style="padding-top:0">
+  <div class="wrap">
+    <div class="overline">O que você recebe</div>
+    <h2>Quatro trilhas de liderança num só acesso</h2>
+    <p class="muted">Acesso vitalício a todo o pacote, em cada inscrição.</p>
+    <div class="cards">
+      <div class="card">
+        <span class="tag">Curso principal</span>
+        <h3>Líder Magnético</h3>
+        <p class="muted">Como desenvolver uma liderança que atrai, inspira e mantém pessoas comprometidas com resultado.</p>
+      </div>
+      <div class="card">
+        <span class="tag">Fundamentos</span>
+        <h3>Liderança Consciente</h3>
+        <p class="muted">A base da liderança pra quem está começando ou quer organizar o que já faz na prática.</p>
+      </div>
+      <div class="card">
+        <span class="tag">Cursos Express</span>
+        <h3>Soluções rápidas pro dia a dia</h3>
+        <ul>
+          <li>Como motivar e engajar sua equipe</li>
+          <li>Reuniões produtivas</li>
+          <li>Gestão de conflitos</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="tag">Formação</span>
+        <h3>Formação em Liderança e Comunicação</h3>
+        <p class="muted">Primeiros módulos:</p>
+        <ul>
+          <li>Mentalidade</li>
+          <li>Princípios</li>
+          <li>Inteligência emocional</li>
+          <li>Inteligência social</li>
+        </ul>
+      </div>
+    </div>
+    <div class="price-hero">
+      <s>R$ 397</s><b>R$ 97</b><span>só o Líder Magnético já custava R$ 397. Agora vem com todo o pacote.</span>
+    </div>
+  </div>
+</section>
+
+<section id="cotas" class="tiers-section">
+  <div class="wrap">
+    <div class="overline">Escolha sua opção</div>
+    <h2>Escolha como você quer participar</h2>
+    <p class="muted">Cada valor libera uma quantidade de inscrições. Uma é sua. As outras você presenteia pra quem quiser, quando quiser.</p>
+
+    <div class="options">
+      <a class="opt" data-qty="1" href="#"><span class="opt-val">R$ 97</span><span class="opt-qty">1 inscrição</span><span class="opt-go">Escolher</span></a>
+      <a class="opt" data-qty="2" href="#"><span class="opt-val">R$ 187</span><span class="opt-qty">2 inscrições</span><span class="opt-go">Escolher</span></a>
+      <a class="opt" data-qty="3" href="#"><span class="opt-val">R$ 267</span><span class="opt-qty">3 inscrições</span><span class="opt-go">Escolher</span></a>
+      <a class="opt" data-qty="5" href="#"><span class="opt-val">R$ 417</span><span class="opt-qty">5 inscrições</span><span class="opt-go">Escolher</span></a>
+      <a class="opt" data-qty="8" href="#"><span class="opt-val">R$ 617</span><span class="opt-qty">8 inscrições</span><span class="opt-go">Escolher</span></a>
+      <a class="opt" data-qty="10" href="#"><span class="opt-val">R$ 717</span><span class="opt-qty">10 inscrições</span><span class="opt-go">Escolher</span></a>
+      <a class="opt" data-qty="15" href="#"><span class="opt-val">R$ 997</span><span class="opt-qty">15 inscrições</span><span class="opt-go">Escolher</span></a>
+      <a class="opt" data-qty="20" href="#"><span class="opt-val">R$ 1.237</span><span class="opt-qty">20 inscrições</span><span class="opt-go">Escolher</span></a>
+    </div>
+
+
+    <p class="note">Acesso vitalício · Garantia de 7 dias · Compra segura</p>
+  </div>
+</section>
+
+<section class="team">
+  <div class="wrap team-grid">
+    <div>
+      <div class="overline">Pra quem tem equipe</div>
+      <h2>Esse é o momento de colocar todo mundo pra desenvolver liderança</h2>
+      <p>Num cenário de economia travada e falta de gente qualificada, quem segura a empresa são as pessoas que você já tem. Com um pacote, cada colaborador recebe o próprio acesso, vitalício, com todo o conteúdo.</p>
+      <p>Você só informa nome, telefone e e-mail de cada um. A gente cuida do resto.</p>
+    </div>
+    <div class="team-box">
+      <div class="team-row"><span>5 inscrições</span><b>R$ 417</b></div>
+      <div class="team-row"><span>8 inscrições</span><b>R$ 617</b></div>
+      <div class="team-row"><span>10 inscrições</span><b>R$ 717</b></div>
+      <div class="team-row"><span>15 inscrições</span><b>R$ 997</b></div>
+      <div class="team-row"><span>20 inscrições</span><b>R$ 1.237</b></div>
+      <div style="margin-top:22px"><a class="btn" href="#cotas" style="width:100%">Escolher pacote</a></div>
+    </div>
+  </div>
+</section>
+
+<section id="como-funciona">
+  <div class="wrap">
+    <div class="overline">Como funciona</div>
+    <h2>Simples pra você e pra quem você presentear</h2>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><h3>Escolha a quantidade</h3><p>Uma inscrição é sua. As demais ficam como créditos pra presentear.</p></div>
+      <div class="step"><div class="n">2</div><h3>Acesso na hora</h3><p>Assim que a compra é aprovada, seu acesso vitalício é liberado.</p></div>
+      <div class="step"><div class="n">3</div><h3>Indique os presenteados</h3><p>Na mesma tela, informe nome, telefone e e-mail de cada pessoa. Não tem todos agora? Os créditos ficam guardados e você indica quando quiser. Nossa equipe entra em contato e libera o acesso de cada um, avisando quem presenteou.</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap about-grid">
+    <div class="photo" style="aspect-ratio:1/1">
+      <img src="claudio-2.jpg" alt="Claudio Schneider" onerror="this.remove()">
+      <div class="ph">Segunda foto (claudio-2.jpg)</div>
+    </div>
+    <div>
+      <div class="overline">Quem conduz</div>
+      <h2>Claudio Schneider</h2>
+      <p class="muted">Fundador da Central do Gestor. Começou no Sebrae em 2002 e passou dez anos no PROPAN, atendendo empresas em 22 estados. Já quebrou uma empresa, reconstruiu tudo e hoje ajuda donos de pequenas e médias empresas a formar líderes e organizar a gestão.</p>
+      <div class="stats">
+        <div class="stat"><b>24 anos</b><span>de experiência</span></div>
+        <div class="stat"><b>1.500+</b><span>empresas atendidas</span></div>
+        <div class="stat"><b>22</b><span>estados</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq" style="padding-top:0">
+  <div class="narrow">
+    <div class="overline">Dúvidas</div>
+    <h2>Perguntas frequentes</h2>
+    <details><summary>Isso é uma doação?</summary><p>É uma compra. Você adquire acesso aos cursos com um valor bem abaixo do normal, e esse valor me ajuda a atravessar o período de tratamento e de mentorias pausadas.</p></details>
+    <details><summary>Por quanto tempo tenho acesso?</summary><p>Acesso vitalício, pra você e pra cada pessoa que você presentear.</p></details>
+    <details><summary>Como presenteio outras pessoas?</summary><p>Depois da compra, você informa nome, telefone e e-mail de cada uma. Nossa equipe entra em contato, conta que foi você quem presenteou e libera o acesso.</p></details>
+    <details><summary>Preciso indicar todo mundo na hora?</summary><p>Não. Os créditos ficam guardados e você indica quando quiser.</p></details>
+    <details><summary>E se eu não gostar?</summary><p>Você tem 7 dias de garantia, conforme o Código de Defesa do Consumidor. Pediu, devolvemos.</p></details>
+    <details><summary>O que vocês fazem com os dados dos presenteados?</summary><p>Usamos só pra liberar o acesso e falar sobre o curso. Seguimos a LGPD.</p></details>
+    <details><summary>Até quando vale?</summary><p>A primeira fase do Projeto Superação vai até 15 de dezembro.</p></details>
+  </div>
+</section>
+
+<section class="final">
+  <div class="narrow">
+    <div class="overline">Projeto Superação</div>
+    <h2>Assim você me ajuda. E eu te ajudo também.</h2>
+    <p>Obrigado por cada oração e cada mensagem. Bora construir juntos um 2027 mais próspero.</p>
+    <div class="countdown" id="countdown" aria-label="Tempo até o fim da primeira fase">
+      <div><b id="cd-d">--</b><span>dias</span></div>
+      <div><b id="cd-h">--</b><span>horas</span></div>
+      <div><b id="cd-m">--</b><span>min</span></div>
+    </div>
+    <div><a class="btn" href="#cotas">Quero participar</a></div>
+  </div>
+</section>
+
+<footer>
+  <p>Central do Gestor · <a href="https://centraldogestor.com.br">centraldogestor.com.br</a></p>
+  <p style="margin-top:6px">Dúvidas? <a id="whats" href="#">Fale com a gente no WhatsApp</a></p>
+</footer>
+
+<div class="sticky"><a class="btn" href="#cotas">Quero participar</a></div>
+
+<script>
+  /* ====== CONFIGURAÇÃO: cole aqui os links de checkout de cada quantidade ====== */
+  var CHECKOUT = {
+    1:  "COLE_O_LINK_1_INSCRICAO",
+    2:  "COLE_O_LINK_2_INSCRICOES",
+    3:  "COLE_O_LINK_3_INSCRICOES",
+    5:  "COLE_O_LINK_5_INSCRICOES",
+    8:  "COLE_O_LINK_8_INSCRICOES",
+    10: "COLE_O_LINK_10_INSCRICOES",
+    15: "COLE_O_LINK_15_INSCRICOES",
+    20: "COLE_O_LINK_20_INSCRICOES"
+  };
+  var WHATSAPP = "https://wa.me/55DDDNUMERO";      // número de suporte
+  var FIM_FASE = new Date("2026-12-15T23:59:59-03:00");
+  /* =========================================================================== */
+
+  document.querySelectorAll("[data-qty]").forEach(function(a){
+    var url = CHECKOUT[a.getAttribute("data-qty")];
+    if (url && url.indexOf("http") === 0){ a.href = url; a.target = "_blank"; a.rel = "noopener"; }
+  });
+  var w = document.getElementById("whats");
+  if (WHATSAPP.indexOf("DDD") === -1){ w.href = WHATSAPP; w.target = "_blank"; }
+
+
+  /* Variante de headline: lider.centraldogestor.com.br/?apoio (link dos stories) */
+  if (/[?&]apoio\b/.test(location.search)){
+    document.getElementById("headline").innerHTML = 'Obrigado por estar comigo <em>nessa caminhada.</em>';
+    document.getElementById("lead").textContent = "Muita gente me perguntou como podia ajudar. Eu preferi fazer do jeito que eu sei: entregando conhecimento. Você participa do Projeto Superação, leva meus cursos de liderança e ainda pode presentear quem quiser.";
+  }
+
+  function tick(){
+    var diff = FIM_FASE - new Date();
+    if (diff <= 0){ document.getElementById("countdown").style.display = "none"; return; }
+    document.getElementById("cd-d").textContent = Math.floor(diff/864e5);
+    document.getElementById("cd-h").textContent = Math.floor(diff/36e5)%24;
+    document.getElementById("cd-m").textContent = Math.floor(diff/6e4)%60;
+  }
+  tick(); setInterval(tick, 30000);
+</script>
+</body>
+</html>

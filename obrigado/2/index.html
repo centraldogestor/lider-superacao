@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Obrigado! | Projeto Superação</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--navy:#141C36;--navy-2:#1c2545;--gold:#C5A059;--btn:#d4ac63;--btn-hover:#e9c76f;--gold-text:#c99a3f;--bg:#fcf9f8;--card:#fff;--ink:#1c1b1b;--mist:#5a6360;--line:#e5e2e1;--radius:16px}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;font-size:17px;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:760px;margin:0 auto;padding:0 20px}
+  .overline{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-text);margin-bottom:12px}
+  h1,h2{font-family:Fraunces,Georgia,serif;font-weight:600;line-height:1.15;color:var(--navy)}
+  h1{font-size:clamp(32px,5.5vw,48px)}
+  h2{font-size:clamp(24px,4vw,32px);margin-bottom:10px}
+  .muted{color:var(--mist)}
+  header{background:var(--navy);color:#fff;padding:56px 0 64px;text-align:center}
+  header h1{color:#fff}
+  header h1 em{font-style:normal;color:var(--btn-hover)}
+  header p{color:rgba(255,255,255,.82);margin-top:16px;font-size:18px}
+  .pill{display:inline-block;margin-top:22px;border:1px solid rgba(197,160,89,.5);color:var(--btn-hover);border-radius:999px;padding:8px 18px;font-weight:600;font-size:15px}
+  section{padding:48px 0}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:30px}
+  .step{display:flex;gap:16px;align-items:flex-start}
+  .n{flex:0 0 40px;height:40px;border-radius:50%;background:var(--navy);color:var(--btn-hover);display:flex;align-items:center;justify-content:center;font-weight:700}
+  .step h3{font-size:19px;color:var(--navy);margin-bottom:4px}
+  .video{margin-top:-32px;position:relative;z-index:2}
+  .video .frame{aspect-ratio:16/9;border-radius:var(--radius);overflow:hidden;background:var(--navy-2);border:1px solid rgba(197,160,89,.35);box-shadow:0 20px 40px rgba(20,28,54,.18)}
+  .video.vertical .frame{aspect-ratio:9/16;max-width:360px;margin:0 auto}
+  .video iframe,.video video{width:100%;height:100%;border:0;display:block}
+  .gap{height:18px}
+  label{display:block;font-size:13px;font-weight:600;color:var(--navy);margin-bottom:6px}
+  input{width:100%;font:inherit;font-size:16px;padding:12px 14px;border:1px solid var(--line);border-radius:10px;background:#fff;color:var(--ink)}
+  input:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(197,160,89,.18)}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .person{border:1px solid var(--line);border-radius:12px;padding:18px;margin-top:14px;background:#fdfcfb}
+  .person-title{font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-text);margin-bottom:12px}
+  .grid3{display:grid;grid-template-columns:1.2fr 1fr 1.3fr;gap:12px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--btn);color:var(--navy);font:inherit;font-weight:700;font-size:16px;padding:16px 28px;border-radius:999px;text-decoration:none;border:0;cursor:pointer;width:100%;transition:background .2s,transform .2s}
+  .btn:hover{background:var(--btn-hover);transform:translateY(-2px)}
+  .btn-line{background:transparent;border:1px solid var(--line);color:var(--navy);margin-top:12px}
+  .btn-line:hover{background:#f4f0ee}
+  .note{font-size:14px;color:var(--mist);margin-top:14px;text-align:center}
+  .err{color:#ba1a1a;font-size:14px;margin-top:12px;text-align:center;display:none}
+  .ok{display:none;text-align:center}
+  footer{text-align:center;color:var(--mist);font-size:13px;padding:30px 20px 50px}
+  footer a{color:var(--navy)}
+  @media(max-width:640px){.grid2,.grid3{grid-template-columns:1fr}.card{padding:22px}.video{margin-top:-24px}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="overline">Projeto Superação</div>
+    <h1>Obrigado! <em>Sua compra foi confirmada.</em></h1>
+    <p>Você faz parte dessa corrente de superação. De coração, muito obrigado.</p>
+    <div class="pill" id="pill"></div>
+  </div>
+</header>
+
+<div class="wrap video" id="videoBox" hidden>
+  <div class="frame" id="videoFrame"></div>
+</div>
+
+<section>
+  <div class="wrap">
+    <div class="card step">
+      <div class="n">1</div>
+      <div>
+        <h3>Seu acesso já está no seu e-mail</h3>
+        <p class="muted">Enviamos os dados de acesso pro e-mail que você usou na compra. Confere a caixa de entrada e também o spam e a aba Promoções.</p>
+      </div>
+    </div>
+
+    <div id="giftArea">
+      <div class="gap"></div>
+      <div class="card">
+        <div class="step" style="margin-bottom:22px">
+          <div class="n">2</div>
+          <div>
+            <h3 id="giftTitle"></h3>
+            <p class="muted">Informe quem vai receber. Nossa equipe faz o cadastro e avisa cada pessoa que o acesso foi um presente seu. Ainda não sabe quem? Sem problema. Envie só os que tiver, ou envie depois. Seus créditos ficam guardados.</p>
+          </div>
+        </div>
+
+        <form id="form" novalidate>
+          <div class="grid2">
+            <div><label for="bName">Seu nome</label><input id="bName" autocomplete="name" placeholder="Nome completo"></div>
+            <div><label for="bEmail">E-mail usado na compra</label><input id="bEmail" type="email" autocomplete="email" placeholder="voce@email.com"></div>
+          </div>
+          <div id="people"></div>
+          <div class="gap"></div>
+          <button class="btn" type="submit">Enviar pelo WhatsApp</button>
+          <p class="err" id="err"></p>
+          <a class="btn btn-line" id="later" target="_blank" rel="noopener">Prefiro enviar depois</a>
+          <p class="note">Os dados são usados só pra liberar o acesso e falar sobre o curso, conforme a LGPD.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Ficou alguma dúvida? <a id="help" target="_blank" rel="noopener">Fale com a gente no WhatsApp</a></p>
+  <p style="margin-top:6px">Central do Gestor · <a href="https://centraldogestor.com.br">centraldogestor.com.br</a></p>
+</footer>
+
+<script>
+  /* ====== CONFIGURAÇÃO ====== */
+  var QTD = 2;                       // quantidade de acessos desta oferta
+  var WHATSAPP = "5547996516267";          // suporte
+  var VIDEO = "";                          // link do vídeo (YouTube, Vimeo ou .mp4). Vazio = sem vídeo
+  var VIDEO_VERTICAL = false;              // true se o vídeo for vertical (formato Reels)
+  /* ========================== */
+
+  var extras = QTD - 1;
+  function plural(n, s, p){ return n === 1 ? s : p; }
+  document.getElementById("pill").textContent = "Sua compra: " + QTD + " " + plural(QTD, "acesso", "acessos");
+  function wa(text){ return "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(text); }
+  document.getElementById("help").href = wa("Olá! Comprei no Projeto Superação e fiquei com uma dúvida.");
+
+  // vídeo
+  (function(){
+    if (!VIDEO) return;
+    var box = document.getElementById("videoBox"), f = document.getElementById("videoFrame"), src = "";
+    var yt = VIDEO.match(/(?:youtu\.be\/|v=|shorts\/|embed\/)([\w-]{11})/);
+    var vm = VIDEO.match(/vimeo\.com\/(?:video\/)?(\d+)/);
+    if (yt) src = "https://www.youtube.com/embed/" + yt[1] + "?rel=0";
+    else if (vm) src = "https://player.vimeo.com/video/" + vm[1];
+    if (src) f.innerHTML = '<iframe src="' + src + '" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Orientações"></iframe>';
+    else f.innerHTML = '<video src="' + VIDEO + '" controls playsinline></video>';
+    if (VIDEO_VERTICAL) box.classList.add("vertical");
+    box.hidden = false;
+  })();
+
+  if (extras < 1){
+    document.getElementById("giftArea").style.display = "none";
+  } else {
+    document.getElementById("giftTitle").textContent = extras === 1
+      ? "Agora, me diz quem vai receber o outro acesso"
+      : "Agora, me diz quem vai receber os outros " + extras + " acessos";
+    var html = "";
+    for (var i = 1; i <= extras; i++){
+      html += '<div class="person"><div class="person-title">Presenteado ' + i + '</div><div class="grid3">' +
+        '<div><label>Nome</label><input data-f="nome" placeholder="Nome completo"></div>' +
+        '<div><label>WhatsApp</label><input data-f="tel" type="tel" inputmode="tel" placeholder="(00) 00000-0000"></div>' +
+        '<div><label>E-mail</label><input data-f="email" type="email" placeholder="email@exemplo.com"></div>' +
+        '</div></div>';
+    }
+    document.getElementById("people").innerHTML = html;
+
+    // máscara simples de telefone
+    document.querySelectorAll('input[data-f="tel"]').forEach(function(el){
+      el.addEventListener("input", function(){
+        var d = el.value.replace(/\D/g, "").slice(0, 11), o = d;
+        if (d.length > 2) o = "(" + d.slice(0,2) + ") " + d.slice(2);
+        if (d.length > 7) o = "(" + d.slice(0,2) + ") " + d.slice(2, d.length - 4) + "-" + d.slice(-4);
+        el.value = o;
+      });
+    });
+
+    function later(){
+      var n = document.getElementById("bName").value.trim(), e = document.getElementById("bEmail").value.trim();
+      return wa("Olá! Comprei " + QTD + " acessos no Projeto Superação" + (n ? " (" + n + (e ? ", " + e : "") + ")" : "") +
+        ". Vou enviar os dados dos " + extras + " presenteados depois, tudo bem?");
+    }
+    var laterBtn = document.getElementById("later");
+    laterBtn.href = later();
+    laterBtn.addEventListener("click", function(){ laterBtn.href = later(); });
+
+    var emailOk = function(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v); };
+    document.getElementById("form").addEventListener("submit", function(ev){
+      ev.preventDefault();
+      var err = document.getElementById("err"); err.style.display = "none";
+      var bName = document.getElementById("bName").value.trim();
+      var bEmail = document.getElementById("bEmail").value.trim();
+      function fail(m){ err.textContent = m; err.style.display = "block"; }
+      if (!bName) return fail("Preencha o seu nome.");
+      if (!emailOk(bEmail)) return fail("Preencha o e-mail que você usou na compra.");
+      var list = [], problem = "";
+      document.querySelectorAll(".person").forEach(function(p, idx){
+        var g = function(f){ return p.querySelector('[data-f="' + f + '"]').value.trim(); };
+        var nome = g("nome"), tel = g("tel"), email = g("email");
+        if (!nome && !tel && !email) return;
+        if (!nome || !email || !emailOk(email)) { problem = problem || ("Confira o presenteado " + (idx+1) + ": nome e e-mail válido são obrigatórios."); return; }
+        list.push({nome:nome, tel:tel, email:email});
+      });
+      if (problem) return fail(problem);
+      if (!list.length) return fail("Preencha pelo menos um presenteado, ou clique em \"Prefiro enviar depois\".");
+      var msg = "*Projeto Superação: cadastro de presenteados*\n\n" +
+        "Comprador: " + bName + "\nE-mail da compra: " + bEmail + "\nCompra: " + QTD + " acessos\n\n";
+      list.forEach(function(p, i){
+        msg += (i+1) + ". " + p.nome + "\n   E-mail: " + p.email + (p.tel ? "\n   WhatsApp: " + p.tel : "") + "\n";
+      });
+      var rest = extras - list.length;
+      msg += "\nEnviados agora: " + list.length + " de " + extras + (rest > 0 ? "\nCréditos guardados: " + rest : "");
+      window.open(wa(msg), "_blank");
+    });
+  }
+</script>
+</body>
+</html>
